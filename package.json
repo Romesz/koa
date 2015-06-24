@@ -1,0 +1,8 @@
+{
+  "name": "koaaa-starter",
+  "description": "Get started with Koa",
+  "version": "0.0.1",
+  "dependencies": {
+    "koa": "^0.21.0"
+  }
+}

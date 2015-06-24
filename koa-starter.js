@@ -1,16 +1,34 @@
+var path = require('path');
 var koa = require('koa');
+var render = require('koa-ejs');
 var app = koa();
 
-app.use(function *(next){
-  this.body = 'Hello Koaaaaa';
-  yield next;
-  //console.log(this.request);
-  //console.log(this.response);
+/*
+* Render 
+*/
+render(app, {
+  root: path.join(__dirname, 'view'),
+  layout: 'hellokoa',
+  viewExt: 'html',
+  cache: false,
+  debug: true
 });
 
-app.use(function *() {
-  console.log('I can do amazing things here AFTER the view is served!');
+app.use(function *(next) {
+  console.log('I can do amazing things here BEFORE the view is served!');
+  yield next;
 });
+
+app.use(function *(){
+  //this.body = 'Hello Koaaaaa';
+  yield this.render('hellokoa', {
+    greet_koa: 'helooo Koaaa'
+  });
+});
+
+app.on('error', function(error) {
+  console.error(error);
+})
 
 app.listen(3000);
 

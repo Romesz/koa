@@ -2,8 +2,20 @@
   "name": "koaaa-starter",
   "description": "Get started with Koa",
   "version": "0.0.1",
+  "author": "Romano Firtermaiszter <firtermaiszter.romano@gmail.com>",
+  "main": "koa-starter.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Romesz/koa-starter.git"
+  },
+  "keywords": [
+    "Koa starter"
+  ],
   "dependencies": {
     "koa": "^0.21.0",
-    "koa-ejs": "^2.0.1"
-  }
+    "koa-ejs": "^2.0.1",
+    "koa-route": "^2.4.1",
+    "koa-logger": "^1.2.2"
+  },
+  "license": "MIT"
 }

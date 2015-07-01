@@ -1,8 +1,11 @@
+/* jshint esnext: true*/
+/* global require, __dirname, console */
+
 var path = require('path');
 var koa = require('koa');
 var render = require('koa-ejs');
 var router = require('koa-route');
-var logger = require('koa-logger')
+var logger = require('koa-logger');
 
 var app = koa();
 
